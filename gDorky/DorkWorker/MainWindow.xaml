@@ -1,0 +1,120 @@
+﻿<Window x:Class="DorkWorker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:DorkWorker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="796" MinWidth="1261" MaxWidth="1261" MinHeight="796" MaxHeight="796" Width="1261" ResizeMode="NoResize" WindowStyle="None" WindowState="Normal" WindowStartupLocation="CenterScreen">
+    <Grid tz:Transitionz.Opacity="{tz:OpacityParams Duration=800, From=0, To=1, TransitionOn=Loaded}" tz:Transitionz.Blur="{tz:BlurParams Duration=1200, From=20, To=0, TransitionOn=Loaded}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="166"></RowDefinition>
+            <RowDefinition Height="166"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="appBar" Fill="White" Width="1261" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="appBar_MouseLeftButtonDown" Grid.ColumnSpan="4">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="20" Opacity="0.1" ShadowDepth="20" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="btnClose" Background="#FF6A6A" BorderBrush="{x:Null}" Width="20" Height="20" materialDesign:ButtonAssist.CornerRadius="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,11,0" Click="btnClose_Click" Grid.Column="3"/>
+        <Button x:Name="btnMin" Background="#FFFFC948" BorderBrush="{x:Null}" Width="20" Height="20" materialDesign:ButtonAssist.CornerRadius="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,36,0" Click="btnMin_Click" Grid.Column="3"/>
+
+        <Button x:Name="btnGoogle" MouseEnter="btnGoogle_MouseEnter" MouseLeave="btnGoogle_MouseLeave" Click="btnGoogle_Click" Margin="10,76,10,10" Grid.Row="0" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"></DropShadowEffect>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/google.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="G" VerticalAlignment="Center" FontSize="30" Foreground="#4285F4" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="o" VerticalAlignment="Center" FontSize="30" Foreground="#DB4437" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="o" VerticalAlignment="Center" FontSize="30" Foreground="#F4B400" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="g" VerticalAlignment="Center" FontSize="30" Foreground="#4285F4" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="l" VerticalAlignment="Center" FontSize="30" Foreground="#0F9D58" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock FontWeight="Regular" FontFamily="Arial" Text="e" VerticalAlignment="Center" FontSize="30" Foreground="#DB4437" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnYahoo" MouseEnter="btnYahoo_MouseEnter" MouseLeave="btnYahoo_MouseLeave" Click="btnYahoo_Click" Margin="10,76,9,10" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Row="0" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/yahoo.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Yahoo" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#673ab7" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnYandex" Click="btnYandex_Click" Margin="10,10,9,10" MouseEnter="btnYandex_MouseEnter" MouseLeave="btnYandex_MouseLeave" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Row="1" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/yandex.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Yandex" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#FE2400" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnBing" MouseEnter="btnBing_MouseEnter" MouseLeave="btnBing_MouseLeave" Click="btnBing_Click" Margin="10,76,9,10" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Row="0" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/bing.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Bing" FontFamily="Segoe UI" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#008373" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnDuckDuckGo" Click="btnDuckDuckGo_Click" Margin="9,10,10,10" MouseEnter="btnDuckDuckGo_MouseEnter" MouseLeave="btnDuckDuckGo_MouseLeave" Grid.Row="2" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/duckduckgo.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="DuckDuckGo" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#E37151" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnStartPage" MouseEnter="btnStartPage_MouseEnter" MouseLeave="btnStartPage_MouseLeave" Click="btnStartPage_Click" Margin="10" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Row="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/startpage.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Startpage" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#6573FF" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnUniversal" Click="btnUniversal_Click" Margin="10,10,9,10" MouseEnter="btnUniversal_MouseEnter" MouseLeave="btnUniversal_MouseLeave" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Column="2" Grid.Row="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/yippy.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Yippy" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="Black" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnQwant" Click="btnQwant_Click" Margin="10" MouseEnter="btnQwant_MouseEnter" MouseLeave="btnQwant_MouseLeave" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Column="1" Grid.Row="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/qwant.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Qwant" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="Black" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnExalead" Click="btnExalead_Click" Margin="10,10,8,10" MouseEnter="btnExalead_MouseEnter" MouseLeave="btnExalead_MouseLeave" materialDesign:ButtonAssist.CornerRadius="20" Height="146" Background="White" BorderBrush="Transparent" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Grid.Row="1" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Assets/exalead.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+                <TextBlock Text="Exalead" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#476782" HorizontalAlignment="Center" Width="auto"/>
+            </StackPanel>
+        </Button>
+        <Label Content="Select from these options to start generate dorks!" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Height="auto" Grid.Row="3" Grid.ColumnSpan="3" Width="715"/>
+        <Label Content="gDorky" HorizontalAlignment="Center" FontFamily="Bauhaus 93" Foreground="#212121" Height="auto" FontSize="50" Width="auto" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" Margin="239,0,10,10"/>
+    </Grid>
+</Window>
