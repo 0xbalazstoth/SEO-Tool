@@ -1,0 +1,190 @@
+﻿<Window x:Class="DorkWorker.YahooDorksGeneratorsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz"
+        xmlns:local="clr-namespace:DorkWorker"
+        mc:Ignorable="d"
+        Title="YahooDorkGeneratorPage" MouseDown="Window_MouseDown" Height="590" Width="800" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True"  WindowState="Normal" WindowStartupLocation="CenterScreen" Background="Transparent">
+    <Grid tz:Transitionz.Opacity="{tz:OpacityParams Duration=500, From=0, To=1, TransitionOn=Loaded}" tz:Transitionz.Blur="{tz:BlurParams Duration=500, From=20, To=0, TransitionOn=Loaded}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="219*"></RowDefinition>
+            <RowDefinition Height="241*"></RowDefinition>
+            <RowDefinition Height="130*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="White" materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ShadowAssist.ShadowEdges="All" Grid.RowSpan="3" Margin="10">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="2" BlurRadius="15" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.2"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Rectangle x:Name="YahooAppBar" Fill="White" Width="780" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="YahooAppBar_MouseLeftButtonDown" Margin="10,10,10,0">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="20" Opacity="0.1" ShadowDepth="20" RenderingBias="Quality" Direction="-90"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Button x:Name="YahooBtnClose" Background="#FF6A6A" BorderBrush="{x:Null}" Width="20" Height="20" materialDesign:ButtonAssist.CornerRadius="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,15,0" Click="YahooBtnClose_Click"/>
+        <Button x:Name="YahooBtnMin" Background="#FFFFC948" BorderBrush="{x:Null}" Width="20" Height="20" materialDesign:ButtonAssist.CornerRadius="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,40,0" Click="YahooBtnMin_Click"/>
+        <Grid Margin="10,50,10,0" HorizontalAlignment="Center" Width="780">
+            <Button Grid.Row="0" x:Name="YahooBtnDorkPatterns" Click="YahooBtnDorkPatterns_Click" MouseEnter="YahooBtnDorkPatterns_MouseEnter" MouseLeave="YahooBtnDorkPatterns_MouseLeave" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="Dork Patterns" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="142" Margin="19,44,619,45" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                </Button.Effect>
+            </Button>
+            <Button Grid.Row="0" x:Name="YahooBtnTLDExtension" Click="YahooBtnTLDExtension_Click" MouseEnter="YahooBtnTLDExtension_MouseEnter" MouseLeave="YahooBtnTLDExtension_MouseLeave" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="TLD extension" FontWeight="Bold" Foreground="#FF4B4B4B" FontFamily="Arial" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="142" Margin="169,44,469,45" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                </Button.Effect>
+            </Button>
+            <Button Grid.Row="0" x:Name="YahooBtnKeywords" Click="YahooBtnKeywords_Click" MouseEnter="YahooBtnKeywords_MouseEnter" MouseLeave="YahooBtnKeywords_MouseLeave" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="Keywords" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="142" Margin="290,0" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                </Button.Effect>
+            </Button>
+            <Button Grid.Row="0" x:Name="YahooBtnSearchOperators" Click="YahooBtnSearchOperators_Click" MouseEnter="YahooBtnSearchOperators_MouseEnter" MouseLeave="YahooBtnSearchOperators_MouseLeave" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="Search Operators" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="289" Margin="471,44,20,45" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <GroupBox x:Name="YahooDorkPatternsUI" Visibility="Visible" materialDesign:ColorZoneAssist.Mode="Custom" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" Margin="10,0,10,10" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <Rectangle Fill="White" RadiusX="20" RadiusY="20" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality" Margin="11,0,12,125" materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Center" HorizontalAlignment="Center" Block.LineHeight="2" Width="739" Height="200">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="-35"/>
+                    </Rectangle.Effect>
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535">Write your dork patterns here...</TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </Rectangle>
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="YahooBtnClearSelectionDorkPatterns" MouseEnter="YahooBtnClearSelectionDorkPatterns_MouseEnter" MouseLeave="YahooBtnClearSelectionDorkPatterns_MouseLeave" Click="YahooBtnClearSelectionDorkPatterns_Click" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="51" Width="57" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Margin="0,-56,9,330">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                    </Button.Effect>
+                    <materialDesign:PackIcon Kind="Clear" Height="30" Width="25" RenderTransformOrigin="-0.12,0.467" />
+                </Button>
+                <CheckBox x:Name="YahooCheckBoxSOKWTLD" materialDesign:CheckBoxAssist.CheckBoxSize="50" IsChecked="True" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="SO.KW.TLD" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="62,17,0,0" Width="auto" Height="51" Background="#FF42C159"/>
+                <CheckBox x:Name="YahooCheckBoxSOKW" materialDesign:CheckBoxAssist.CheckBoxSize="50" IsChecked="True" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="SO.KW" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="62,68,0,0" Width="auto" Height="51" Background="#FF42C159"/>
+                <CheckBox x:Name="YahooCheckBoxKWTLD" materialDesign:CheckBoxAssist.CheckBoxSize="50" IsChecked="True" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="KW.TLD" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="62,119,0,0" Width="auto" Height="51" Background="#FF42C159"/>
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="YahooBtnAllSelectionDorkPatterns" MouseEnter="YahooBtnAllSelectionDorkPatterns_MouseEnter" MouseLeave="YahooBtnAllSelectionDorkPatterns_MouseLeave" Click="YahooBtnAllSelectionDorkPatterns_Click" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="51" Width="57" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Margin="0,-56,71,330">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                    </Button.Effect>
+                    <materialDesign:PackIcon Kind="SelectAll" Height="30" Width="25" RenderTransformOrigin="-0.12,0.467" />
+                </Button>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox x:Name="YahooTLDExtensionUI" Visibility="Hidden" materialDesign:ColorZoneAssist.Mode="Custom" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" Margin="10,0,10,10" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <TextBox x:Name="YahooTxtBoxTLDExtensionField" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow" TextAlignment="Center" Foreground="#FF4B4B4B" HorizontalContentAlignment="Center" FontSize="40" FontFamily="Arial" FontWeight="UltraLight" materialDesign:ScrollBarAssist.ButtonsVisibility="Visible" materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Background="White" BorderBrush="Transparent" materialDesign:TextFieldAssist.TextFieldCornerRadius="20" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality" BorderThickness="0" Margin="11,0,12,125" materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Center" HorizontalAlignment="Center" Block.LineHeight="2" AcceptsTab="True" AcceptsReturn="True" Width="739" Height="200" CaretBrush="#FF4B4B4B">
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="-35"/>
+                    </TextBox.Effect>
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535">Write your Top-level domains here...</TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="YahooBtnCleantxtBoxTLDExtensionField" MouseEnter="YahooBtnCleantxtBoxTLDExtensionField_MouseEnter" MouseLeave="YahooBtnCleantxtBoxTLDExtensionField_MouseLeave" Click="YahooBtnCleantxtBoxTLDExtensionField_Click" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="51" Width="57" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Margin="0,-56,9,330">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                    </Button.Effect>
+                    <materialDesign:PackIcon Kind="Clear" Height="30" Width="25" RenderTransformOrigin="-0.12,0.467" />
+                </Button>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox x:Name="YahooKeywordsUI" Visibility="Hidden" materialDesign:ColorZoneAssist.Mode="Custom" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" Margin="10,0,10,10" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <TextBox x:Name="YahooTxtBoxPrefix" IsEnabled="{Binding ElementName=YahooCheckBoxPrefix, Path=IsChecked}" Background="White" materialDesign:TextFieldAssist.HasClearButton="True" MaxLength="5" FontWeight="Bold" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" materialDesign:TextFieldAssist.UnderlineBrush="Transparent" BorderBrush="Transparent" materialDesign:TextFieldAssist.TextFieldCornerRadius="20" FontSize="13" UseLayoutRounding="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" TextAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="56,-50,0,0" Width="85" Height="38">
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535" TextAlignment="Left" Width="80">Prefix</TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <TextBox x:Name="YahooTxtBoxKeywordsField" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow" TextAlignment="Center" Foreground="#FF4B4B4B" HorizontalContentAlignment="Center" FontSize="40" FontFamily="Arial" FontWeight="UltraLight" materialDesign:ScrollBarAssist.ButtonsVisibility="Visible" materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Background="White" BorderBrush="Transparent" materialDesign:TextFieldAssist.TextFieldCornerRadius="20" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality" BorderThickness="0" Margin="11,0,12,125" materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Center" HorizontalAlignment="Center" Block.LineHeight="2" AcceptsTab="True" AcceptsReturn="True" Width="739" Height="200" CaretBrush="#FF4B4B4B">
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="-35"/>
+                    </TextBox.Effect>
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535">Write your keywords here...</TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="YahooBtnCleantxtBoxKeywordsField" MouseEnter="YahooBtnCleantxtBoxKeywordsField_MouseEnter" MouseLeave="YahooBtnCleantxtBoxKeywordsField_MouseLeave" Click="YahooBtnCleantxtBoxKeywordsField_Click" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="51" Width="57" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Margin="0,-56,9,330">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                    </Button.Effect>
+                    <materialDesign:PackIcon Kind="Clear" Height="30" Width="25" RenderTransformOrigin="-0.12,0.467" />
+                </Button>
+                <CheckBox x:Name="YahooCheckBoxPrefix" materialDesign:CheckBoxAssist.CheckBoxSize="50" IsChecked="True" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="6,-56,0,0" Width="50" Height="51" Background="#FF42C159"/>
+                <TextBox x:Name="YahooTxtBoxSuffix" IsEnabled="{Binding IsChecked, ElementName=YahooCheckBoxSuffix}" Background="White" materialDesign:TextFieldAssist.HasClearButton="True" MaxLength="5" FontWeight="Bold" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" materialDesign:TextFieldAssist.UnderlineBrush="Transparent" BorderBrush="Transparent" materialDesign:TextFieldAssist.TextFieldCornerRadius="20" FontSize="13" UseLayoutRounding="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" TextAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="196,-50,0,0" Width="85" Height="38">
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535" TextAlignment="Left" Width="80"><Run Text="Suffix"/></TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <CheckBox x:Name="YahooCheckBoxSuffix" materialDesign:CheckBoxAssist.CheckBoxSize="50" IsChecked="True" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="146,-56,0,0" Width="50" Height="51" Background="#FF42C159"/>
+                <ListView VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="176"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox x:Name="YahooSearchOperatorsUI" Visibility="Hidden" materialDesign:ColorZoneAssist.Mode="Custom" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" Margin="10,0,10,10" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <TextBox x:Name="YahooTxtBoxSearchOperatorsField" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow" TextAlignment="Center" Foreground="#FF4B4B4B" HorizontalContentAlignment="Center" FontSize="40" FontFamily="Arial" FontWeight="UltraLight" materialDesign:ScrollBarAssist.ButtonsVisibility="Visible" materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Background="White" BorderBrush="Transparent" materialDesign:TextFieldAssist.TextFieldCornerRadius="20" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality" BorderThickness="0" Margin="11,0,12,125" materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Center" HorizontalAlignment="Center" Block.LineHeight="2" AcceptsTab="True" AcceptsReturn="True" Width="739" Height="200" CaretBrush="#FF4B4B4B">
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="-35"/>
+                    </TextBox.Effect>
+                    <materialDesign:HintAssist.Hint>
+                        <TextBlock Foreground="#FF363535">Write your search operators here...</TextBlock>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="YahooBtnCleantxtBoxSearchOperatorsField" MouseEnter="YahooBtnCleantxtBoxSearchOperatorsField_MouseEnter" MouseLeave="YahooBtnCleantxtBoxSearchOperatorsField_MouseLeave" Click="YahooBtnCleantxtBoxSearchOperatorsField_Click" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="51" Width="57" Background="White" BorderBrush="#FFECECEC" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="0" Margin="0,-56,9,330">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+                    </Button.Effect>
+                    <materialDesign:PackIcon Kind="Clear" Height="30" Width="25" RenderTransformOrigin="-0.12,0.467" />
+                </Button>
+                <TreeView x:Name="YahooTreeSearch" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="256,0,0,5" Height="106" Width="245" Background="White" FontFamily="Arial">
+                    <TreeViewItem Header="Search Operators" Background="White" FontWeight="Bold" FontSize="16" Foreground="#FF363535">
+                        <TreeViewItem Header="site" Background="White" FontWeight="Light" FontSize="13" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="hostname" FontSize="13" Background="White" FontWeight="Light" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="link" FontSize="13" Background="White" FontWeight="Light" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="url" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="inurl" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="intitle" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="map" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="weather" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="define" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="convert" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="region" FontSize="13" Foreground="#FF363535" Background="White" FontWeight="Light" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                    </TreeViewItem>
+                </TreeView>
+            </Grid>
+        </GroupBox>
+        <Button Grid.Row="2" x:Name="YahooBtnGenerate" Click="YahooBtnGenerate_Click" MouseEnter="YahooBtnGenerate_MouseEnter" MouseLeave="YahooBtnGenerate_MouseLeave" BorderThickness="2" BorderBrush="#FF42C159" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Content="Generate" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="142" Background="White" materialDesign:ShadowAssist.ShadowDepth="Depth0" Margin="633,20,25,30">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+        </Button>
+        <TreeView x:Name="YahooTreePattern" VerticalAlignment="Top" Grid.Row="2" HorizontalAlignment="Left" Margin="25,0,0,0" Height="106" Width="245" Background="White" FontFamily="Arial">
+            <TreeViewItem Header="Pattern explanation" Background="White" FontWeight="Bold" FontSize="16" Foreground="#FF363535">
+                <TreeViewItem Header="SO: Search Operator" Background="White" FontWeight="Light" FontSize="13" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                <TreeViewItem Header="KW: Keyword" FontSize="13" Background="White" FontWeight="Light" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                <TreeViewItem Header="TLD: Top-level domain" FontSize="13" Background="White" FontWeight="Light" Foreground="#FF363535" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+            </TreeViewItem>
+        </TreeView>
+        <Label x:Name="YahooLblGeneratedDorks" MouseDown="YahooLblGeneratedDorks_MouseDown" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF363535" FontWeight="Bold" FontSize="15" Width="auto" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <StackPanel Orientation="Horizontal" MouseDown="StackPanel_MouseDown" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" Height="40">
+            <Image Source="Assets/yahoo.png" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="27" Width="51"/>
+            <TextBlock Text="Yahoo" FontWeight="Regular" VerticalAlignment="Center" FontSize="30" Foreground="#673ab7" HorizontalAlignment="Center" Width="auto"/>
+        </StackPanel>
+        <Button Grid.Row="2" x:Name="YahooBtnOpenSaveFolder" Click="YahooBtnOpenSaveFolder_Click" MouseEnter="YahooBtnOpenSaveFolder_MouseEnter" MouseLeave="YahooBtnOpenSaveFolder_MouseLeave" BorderThickness="2" BorderBrush="#FF2CABBF" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" Foreground="#FF4B4B4B" FontFamily="Arial" FontWeight="Bold" FontSize="13" Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="20" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Width="63" Background="White" materialDesign:ShadowAssist.ShadowDepth="Depth0" Margin="565,20,172,30">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" RenderingBias="Quality" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.15" Direction="280"/>
+            </Button.Effect>
+            <materialDesign:PackIcon Kind="Folder" Height="50" Width="40" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+    </Grid>
+</Window>
